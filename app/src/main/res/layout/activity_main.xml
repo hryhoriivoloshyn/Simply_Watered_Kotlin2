@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/backgroundImageView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:contentDescription="@string/background_description"-->
+<!--        android:scaleType="fitXY"-->
+<!--        android:scrollbars="vertical"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/zodiac_portrait" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/promptTextView"-->
+<!--        android:layout_width="296dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:text="@string/prompt_text"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textSize="30sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/backgroundImageView"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/backgroundImageView"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner"-->
+<!--        android:layout_width="291dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginTop="35dp"-->
+<!--        android:background="@android:color/holo_blue_light"-->
+<!--        android:gravity="end"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/backgroundImageView"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/backgroundImageView"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/promptTextView" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="GET запрос"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"/>-->
+
+
+    <fragment
+        class="com.example.simply_watered_kotlin2.UsersFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

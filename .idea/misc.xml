@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/layout/activity_main.xml" value="0.25343999226562525" />
+        <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/layout/fragment_users.xml" value="0.38399998828125037" />
+        <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/layout/users_layout.xml" value="0.25343999226562525" />
+        <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/xml/network_security_config.xml" value="0.11822916666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
