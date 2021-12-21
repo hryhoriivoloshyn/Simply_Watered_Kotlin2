@@ -82,17 +82,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener{
         try {
             url = URL(apiUrl)
             connection = url.openConnection() as HttpURLConnection
-            // set headers for the request
-            // set host name
-//            connection.setRequestProperty("x-rapidapi-host", "sameer-kumar-aztro-v1.p.rapidapi.com")
-//
-//            // set the rapid-api key
-//            connection.setRequestProperty("x-rapidapi-key", "<YOUR_RAPIDAPI_KEY>")
-//            connection.setRequestProperty("content-type", "application/x-www-form-urlencoded")
-            // set the request method - POST
 
-//            val connection = URL("http://10.0.2.2:5000/api/regiongroups").openConnection() as HttpURLConnection
-//            val data1 = connection.inputStream.bufferedReader().readText()
 
 
             connection.requestMethod = "PUT"

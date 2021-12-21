@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_usersFragment_to_devicesFragment2"
             app:destination="@id/devicesFragment" />
+        <action
+            android:id="@+id/action_usersFragment_to_addUserFragment"
+            app:destination="@id/addUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/devicesFragment"
@@ -18,6 +21,14 @@
         android:label="DevicesFragment" >
         <action
             android:id="@+id/action_devicesFragment_to_usersFragment2"
+            app:destination="@id/usersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUserFragment"
+        android:name="com.example.simply_watered_kotlin2.AddUserFragment"
+        android:label="AddUserFragment" >
+        <action
+            android:id="@+id/action_addUserFragment_to_usersFragment"
             app:destination="@id/usersFragment" />
     </fragment>
 </navigation>

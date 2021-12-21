@@ -156,6 +156,60 @@ class DevicesFragment : Fragment() {
         }
     }
 
+//    private suspend fun putDevices(deviceId: String) {
+//        try {
+//
+//            val result = GlobalScope.async {
+//                callApiPut("http://10.0.2.2:5000/api/admindevices",deviceId)
+//            }.await()
+//
+//
+//
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+//    }
+//    private fun callApiPut(apiUrl:String, deviceId:String ):String?{
+//        var result: String? = ""
+//        val url: URL;
+//        var connection: HttpURLConnection? = null
+//        try {
+//            url = URL("$apiUrl/$deviceId")
+//            connection = url.openConnection() as HttpURLConnection
+////                connection.setRequestProperty("content-type", "application/json; utf-8")
+//            // set headers for the request
+//            // set host name
+////            connection.setRequestProperty("x-rapidapi-host", "sameer-kumar-aztro-v1.p.rapidapi.com")
+////
+////            // set the rapid-api key
+////            connection.setRequestProperty("x-rapidapi-key", "<YOUR_RAPIDAPI_KEY>")
+//
+//            // set the request method - POST
+//
+////            val connection = URL("http://10.0.2.2:5000/api/regiongroups").openConnection() as HttpURLConnection
+////            val data1 = connection.inputStream.bufferedReader().readText()
+//
+//
+//            connection.requestMethod = "PUT"
+//            val `in` = connection.inputStream
+//            val reader = InputStreamReader(`in`)
+//
+//            // read the response data
+//            var data = reader.read()
+//            while (data != -1) {
+//                val current = data.toChar()
+//                result += current
+//                data = reader.read()
+//            }
+//            return result
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+//
+//        // if not able to retrieve data return null
+//        return null
+//
+//    }
 
 
 }

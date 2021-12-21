@@ -16,8 +16,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerUserList"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="418dp"
+        android:layout_height="528dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -36,5 +36,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-        app:srcCompat="@android:drawable/ic_lock_idle_charging" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="203dp"
+        android:layout_height="26dp"
+        android:text="Користувачі"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerUserList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <Button
+        android:id="@+id/btn_addUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Додати"
+        tools:layout_editor_absoluteX="278dp"
+        tools:layout_editor_absoluteY="680dp" />
+    app:srcCompat="@android:drawable/ic_lock_idle_charging" />
 </androidx.constraintlayout.widget.ConstraintLayout>

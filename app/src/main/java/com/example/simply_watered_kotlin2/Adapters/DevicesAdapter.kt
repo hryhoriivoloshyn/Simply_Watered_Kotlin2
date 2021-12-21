@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simply_watered_kotlin2.CallApi.DevicesCall
 import com.example.simply_watered_kotlin2.Models.Device
@@ -15,12 +16,20 @@ import com.example.simply_watered_kotlin2.R
 import kotlinx.android.synthetic.main.fragment_users.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
+import java.util.*
+import android.widget.AdapterView.OnItemClickListener
+import com.example.simply_watered_kotlin2.DevicesFragment
+
 
 class DevicesAdapter(private val dataSet: Array<DeviceModel>) :
     RecyclerView.Adapter<DevicesAdapter.ViewHolder>() {
+
+
+
 
 
 
@@ -28,13 +37,25 @@ class DevicesAdapter(private val dataSet: Array<DeviceModel>) :
      * Provide a reference to the type of views that you are using
      * (custom ViewHolder).
      */
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val textName: TextView
         val textSerialNumber: TextView
         val deviceId: TextView
         val button: Button
 
+
+//        var mlistener: OnItemClickListener ? = null
+//
+//        public interface OnItemClickListener  {
+//            fun getDevices()
+//        }
+//
+//        fun setOnItemClickListener(listener: OnItemClickListener) {
+//            mlistener = listener
+//        }
+
         init {
+
             // Define click listener for the ViewHolder's View.
             textName = itemView.findViewById(R.id.txt_name)
             textSerialNumber=itemView.findViewById(R.id.txt_serialNumber)
@@ -44,6 +65,7 @@ class DevicesAdapter(private val dataSet: Array<DeviceModel>) :
             button.setOnClickListener {
                 GlobalScope.async {
                     putDevices(deviceId.text.toString())
+
                 }
             }
         }
@@ -54,6 +76,10 @@ class DevicesAdapter(private val dataSet: Array<DeviceModel>) :
                 val result = GlobalScope.async {
                     callApiPut("http://10.0.2.2:5000/api/admindevices",deviceId)
                 }.await()
+
+//                mlistener?.getDevices()
+
+
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -99,6 +125,8 @@ class DevicesAdapter(private val dataSet: Array<DeviceModel>) :
             return null
 
         }
+
+
     }
 
 
