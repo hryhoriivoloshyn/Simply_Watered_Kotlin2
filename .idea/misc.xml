@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/layout/activity_main.xml" value="0.25343999226562525" />
-        <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/layout/fragment_users.xml" value="0.38399998828125037" />
+        <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/layout/devices_layout.xml" value="0.2359375" />
+        <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/layout/fragment_devices.xml" value="0.2359375" />
+        <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/layout/fragment_users.xml" value="0.16895999484375016" />
         <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/layout/users_layout.xml" value="0.25343999226562525" />
         <entry key="..\:/AndroidStudioProjects/Simply_Watered_Kotlin2/app/src/main/res/xml/network_security_config.xml" value="0.11822916666666666" />
       </map>

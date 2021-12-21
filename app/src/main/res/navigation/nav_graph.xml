@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/usersFragment">
+
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.simply_watered_kotlin2.UsersFragment"
+        android:label="UsersFragment" >
+        <action
+            android:id="@+id/action_usersFragment_to_devicesFragment2"
+            app:destination="@id/devicesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/devicesFragment"
+        android:name="com.example.simply_watered_kotlin2.DevicesFragment"
+        android:label="DevicesFragment" >
+        <action
+            android:id="@+id/action_devicesFragment_to_usersFragment2"
+            app:destination="@id/usersFragment" />
+    </fragment>
+</navigation>

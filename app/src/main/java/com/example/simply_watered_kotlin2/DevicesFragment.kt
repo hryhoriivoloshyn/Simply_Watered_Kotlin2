@@ -4,31 +4,30 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.simply_watered_kotlin2.Adapters.DevicesAdapter
 import com.example.simply_watered_kotlin2.Adapters.UsersAdapter
+import com.example.simply_watered_kotlin2.Models.DeviceModel
 import com.example.simply_watered_kotlin2.Models.UserModel
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import kotlinx.android.synthetic.main.fragment_devices.*
 import kotlinx.android.synthetic.main.fragment_users.*
-import kotlinx.android.synthetic.main.users_layout.*
+import kotlinx.android.synthetic.main.fragment_users.button
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
-import com.google.gson.reflect.TypeToken
-import kotlinx.coroutines.launch
-import java.lang.reflect.Type
 
-
-class UsersFragment : Fragment() {
+class DevicesFragment : Fragment() {
 
     lateinit var layoutManager: LinearLayoutManager
-    lateinit var adapter: UsersAdapter
+    lateinit var adapter: DevicesAdapter
 
     var resultView: TextView? = null
 
@@ -43,37 +42,37 @@ class UsersFragment : Fragment() {
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        return inflater.inflate(R.layout.fragment_users, container, false);
+        return inflater.inflate(R.layout.fragment_devices, container, false);
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?){
         super.onActivityCreated(savedInstanceState)
-        
 
-        recyclerUserList.setHasFixedSize(true)
+
+        recyclerDeviceList.setHasFixedSize(true)
         layoutManager = LinearLayoutManager(getContext())
-        recyclerUserList.layoutManager = layoutManager
+        recyclerDeviceList.layoutManager = layoutManager
 
 //        val buttonView: Button = requireActivity()!!.findViewById<View>(R.id.button) as Button
         button.setOnClickListener {
             GlobalScope.async {
-                getUsers()
+                getDevices()
             }
         }
         viewLifecycleOwner.lifecycleScope.launch {
-            getUsers()
+            getDevices()
         }
 
-        goToDevicesButton.setOnClickListener{
-            findNavController().navigate(R.id.action_usersFragment_to_devicesFragment2)
+        goToUsersButton.setOnClickListener{
+            findNavController().navigate(R.id.action_devicesFragment_to_usersFragment2)
         }
 
     }
 
-    public suspend fun getUsers() {
+    public suspend fun getDevices() {
         try {
             val result = GlobalScope.async {
-                callApi("http://10.0.2.2:5000/api/admin/users")
+                callApi("http://10.0.2.2:5000/api/adminDevices")
             }.await()
 
             onResponse(result)
@@ -129,11 +128,11 @@ class UsersFragment : Fragment() {
             val gson = builder.create()
 
 
-            val resultJson: Array<UserModel> = gson.fromJson(result, Array<UserModel>::class.java)
+            val resultJson: Array<DeviceModel> = gson.fromJson(result, Array<DeviceModel>::class.java)
 
-            adapter = UsersAdapter(resultJson)
+            adapter = DevicesAdapter(resultJson)
             adapter.notifyDataSetChanged()
-            getActivity()?.runOnUiThread { recyclerUserList.adapter = adapter }
+            getActivity()?.runOnUiThread { recyclerDeviceList.adapter = adapter }
 
 
 //
@@ -156,6 +155,7 @@ class UsersFragment : Fragment() {
             this.resultView!!.text = "Oops!! something went wrong, please try again"
         }
     }
+
 
 
 }
